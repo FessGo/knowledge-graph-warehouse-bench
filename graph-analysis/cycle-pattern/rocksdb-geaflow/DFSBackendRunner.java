@@ -1,4 +1,4 @@
-import com.antfin.aikg.kgfabric.adaptor.geaflow.benchmark.vc.3HopsCycleDetectionAlgorithm;
+import com.antfin.aikg.kgfabric.adaptor.geaflow.benchmark.vc.CycleDetection3HopsAlgorithm;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.benchmark.Options;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.structure.EdgeValueWrapper;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.structure.GraphKey;

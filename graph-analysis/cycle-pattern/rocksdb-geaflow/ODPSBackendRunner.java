@@ -1,5 +1,5 @@
 import com.aliyun.odps.mapred.JobContext;
-import com.antfin.aikg.kgfabric.adaptor.geaflow.benchmark.vc.3HopsCycleDetectionAlgorithm;
+import com.antfin.aikg.kgfabric.adaptor.geaflow.benchmark.vc.CycleDetection3HopsAlgorithm;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.structure.rocksdb.RocksDBVertexValue;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.structure.rocksdb.RocksdbEdgeValueWrapper;
 import com.antfin.aikg.kgfabric.adaptor.geaflow.util.StateConfigBuilder;
