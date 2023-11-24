@@ -63,7 +63,7 @@ public class ODPSBackendRunner {
         context.submitJob((ISyncJob<Object, Long>) ((jobContext, input) -> {
             Graph<String, RocksDBVertexValue, RocksdbEdgeValueWrapper> graph = getOdpsSource(jobContext,parallelism);
             // stage2#iteration
-            graph.runVCIterator(new 3HopsCycleDetectionAlgorithm(), parallelism)
+            graph.runVCIterator(new CycleDetection3HopsAlgorithm(), parallelism)
                     .getVertexDataSet()
                     .get();
         }));

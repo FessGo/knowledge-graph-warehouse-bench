@@ -29,7 +29,7 @@ public class DFSBackendRunner {
         context.submitJob((ISyncJob<Object, Long>) ((jobContext, input) -> {
             Graph<GraphKey, VertexValueWrapper, EdgeValueWrapper> graph = Graph.buildGraph(jobContext, SourceUtil.getNoShuffleSource(parallelism));
             // stage2#iteration
-            return graph.runVCIterator(new 3HopCycleDetectionAlgorithm(), parallelism)
+            return graph.runVCIterator(new CycleDetection3HopsAlgorithm(), parallelism)
                     .getVertexDataSet()
                     .get();
         }));
