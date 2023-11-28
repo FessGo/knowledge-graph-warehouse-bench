@@ -18,7 +18,7 @@ public class KGFabricBackendRunner {
         context.withResource(parallelism);
         context.setRunningMode(ArchEnvContext.RunningMode.default_mode);
 
-        StateConfigBuilder.newRocksDB()
+        StateConfigBuilder.newKGFabricBackend()
                 .withFsUri(Options.FS_URI)
                 .withNamespace(Options.NAMESPACE)
                 .withVertexType(Options.VERTEX_TYPE)

@@ -1,4 +1,4 @@
-import com.antfin.aikg.kstate.adaptor.geaflow.structure.GraphKey;
+import com.antfin.aikg.kgfabric.adaptor.geaflow.structure.GraphKey;
 import com.antfin.arc.arch.api.algorithm.graph.IGraphVCPartition;
 import com.antfin.arc.arch.api.algorithm.graph.VCAlgorithm;
 import com.antfin.arc.arch.api.function.graph.VCFunction;
