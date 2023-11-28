@@ -7,5 +7,5 @@ NAMESPACE="twitter2010"
 java -jar ${KGFABRIC_BUILDER_PATH} import
 --schema="${SCHEMA}" \
 --nodes=User="$DPATH/node.csv" \
---relationships=CONNECT="$DPATH/../twitter-2010.csv" \
+--relationships=CONNECT="$DPATH/twitter-2010.csv" \
 "${NAMESPACE}"
