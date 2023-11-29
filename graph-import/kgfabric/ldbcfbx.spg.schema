@@ -80,55 +80,68 @@ CREATE ENTITY TYPE (Medium {
 
 CREATE RELATION TYPE (Account)-[TRANSFER {
 	createTime Timestamp, 
-	amount double,
+	amount Double,
 	ordernumber String,
 	comment String,
 	payType String,
-	goodsType String
+	goodsType String,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Medium)-[SIGNIN {
 	createTime Timestamp, 
-	location String
+	location String,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Person)-[PERSONOWNACCOUNT {
-	createTime Timestamp
+	createTime Timestamp,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Company)-[COMPANYOWMACCOUNT {
-	createTime Timestamp
+	createTime Timestamp,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Account)-[WITHDRAW {
 	createTime Timestamp,
-	amount double
+	amount Double,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Person)-[PERSONAPPLYLOAN {
 	createTime Timestamp, 
-	organization String
+	organization String,
+	_flag Int
 }]->(Loan);
 CREATE RELATION TYPE (Company)-[COMPANYAPPLYLOAD {
 	createTime Timestamp, 
-	organization String
+	organization String,
+	_flag Int
 }]->(Loan);
 CREATE RELATION TYPE (Loan)-[DEPOSIT {
 	createTime Timestamp, 
-	amount double
+	amount Double,
+	_flag Int
 }]->(Account);
 CREATE RELATION TYPE (Account)-[REPAY {
 	createTime Timestamp, 
-	amount double
+	amount Double,
+	_flag Int
 }]->(Loan);
 CREATE RELATION TYPE (Person)-[PERSONINVEST {
 	createTime Timestamp, 
-	ratio double
+	ratio Double,
+	_flag Int
 }]->(Company);
 CREATE RELATION TYPE (Company)-[COMPANYINVEST {
 	createTime Timestamp, 
-	ratio double
+	ratio Double,
+	_flag Int
 }]->(Company);
 CREATE RELATION TYPE (Person)-[PERSONGUARANTEE {
 	createTime Timestamp, 
-	relation String
+	relation String,
+	_flag Int
 }]->(Person);
 CREATE RELATION TYPE (Company)-[COMPANYGUARANTEE {
 	createTime Timestamp, 
-	relation String
+	relation String,
+	_flag Int
 }]->(Company);
