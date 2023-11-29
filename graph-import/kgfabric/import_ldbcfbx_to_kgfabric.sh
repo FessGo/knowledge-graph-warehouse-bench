@@ -1,7 +1,7 @@
 set -e
 KGFABRIC_BUILDER_PATH="kgfabric-local-builder.jar"
 DPATH="sf1.new"
-SCHEMA="ldbcfb.spg.schema"
+SCHEMA="ldbcfbx.spg.schema"
 
 NAMESPACE="ldbc-fb-x"
 java -jar ${KGFABRIC_BUILDER_PATH} import
