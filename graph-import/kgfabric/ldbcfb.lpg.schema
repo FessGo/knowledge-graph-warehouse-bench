@@ -1,0 +1,87 @@
+CREATE ENTITY TYPE (Account {
+	id ID,
+	createTime Timestamp,
+	isBlocked Boolean,
+	type String,
+	nickname String,
+	phoneNumber String,
+	email String,
+	freqLoginType String,
+	lastLoginTime DateTime,
+	accountLevel String,
+});
+CREATE ENTITY TYPE (Company {
+	id ID,
+	createTime Timestamp,
+	name String,
+	isBlocked Boolean,
+	country String,
+	city String,
+	business String,
+	description String,
+	url String
+});
+CREATE ENTITY TYPE (Person {
+	id ID,
+	createTime Timestamp,
+	name String,
+	isBlocked Boolean,
+	gender String,
+	birthday String,	country String,	city String
+});
+CREATE ENTITY TYPE (Loan {
+	id ID,
+	loanAmount double,	balance double,	usage String,	interestRate double
+});
+CREATE ENTITY TYPE (Medium {
+	id ID,
+	type String,	createTime Timestamp,	isBlocked Boolean,	lastLoginTime Long,	riskLevel String
+});
+
+CREATE RELATION TYPE (Account)-[TRANSFER {
+	createTime Timestamp, 
+	amount double,	ordernumber String,	comment String,	payType String,	goodsType String
+}]->(Account);
+CREATE RELATION TYPE (Medium)-[SIGNIN {
+	createTime Timestamp, 
+	location String
+}]->(Account);
+CREATE RELATION TYPE (Person)-[PERSONOWNACCOUNT {
+	createTime Timestamp
+}]->(Account);
+CREATE RELATION TYPE (Company)-[COMPANYOWMACCOUNT {
+	createTime Timestamp
+}]->(Account);
+CREATE RELATION TYPE (Account)-[WITHDRAW {
+	createTime Timestamp,	amount double
+}]->(Account);CREATE RELATION TYPE (Person)-[PERSONAPPLYLOAN {
+	createTime Timestamp, 
+	organization String
+}]->(Loan);
+CREATE RELATION TYPE (Company)-[COMPANYAPPLYLOAD {
+	createTime Timestamp, 
+	organization String
+}]->(Loan);
+CREATE RELATION TYPE (Loan)-[DEPOSIT {
+	createTime Timestamp, 
+	amount double
+}]->(Account);
+CREATE RELATION TYPE (Account)-[REPAY {
+	createTime Timestamp, 
+	amount double
+}]->(Loan);
+CREATE RELATION TYPE (Person)-[PERSONINVEST {
+	createTime Timestamp, 
+	ratio double
+}]->(Company);
+CREATE RELATION TYPE (Company)-[COMPANYINVEST {
+	createTime Timestamp, 
+	ratio double
+}]->(Company);
+CREATE RELATION TYPE (Person)-[PERSONGUARANTEE {
+	createTime Timestamp, 
+	relation String
+}]->(Person);CREATE RELATION TYPE (Company)-[COMPANYGUARANTEE {
+	createTime Timestamp, 
+	relation String
+}]->(Company);

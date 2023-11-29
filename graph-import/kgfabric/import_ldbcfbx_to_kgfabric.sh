@@ -6,13 +6,13 @@ SCHEMA="ldbcfb.spg.schema"
 NAMESPACE="ldbc-fb-x"
 java -jar ${KGFABRIC_BUILDER_PATH} import
 --schema="${SCHEMA}" \
---concepts=BusinessType="$DPATH/businessType.csv" \
---concepts=AccountType="$DPATH/accountType.csv" \
---concepts=AccountLevel="$DPATH/accountLevel.csv" \
---concepts=MediumType="$DPATH/mediumType.csv" \
---concepts=RiskLevel="$DPATH/riskLevel.csv" \
---concepts=Country="$DPATH/country.csv" \
---concepts=City="$DPATH/city.csv" \
+--concepts=Concept.BusinessType="$DPATH/businessType.csv" \
+--concepts=Concept.AccountType="$DPATH/accountType.csv" \
+--concepts=Concept.AccountLevel="$DPATH/accountLevel.csv" \
+--concepts=Concept.MediumType="$DPATH/mediumType.csv" \
+--concepts=Concept.RiskLevel="$DPATH/riskLevel.csv" \
+--concepts=Concept.Country="$DPATH/country.csv" \
+--concepts=Concept.City="$DPATH/city.csv" \
 --nodes=Account="$DPATH/account.csv" \
 --nodes=Person="$DPATH/person.csv" \
 --nodes=Medium="$DPATH/medium.csv" \
