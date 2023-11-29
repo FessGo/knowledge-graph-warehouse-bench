@@ -19,9 +19,15 @@ CREATE CONCEPT TYPE (Concept.Country {
 CREATE CONCEPT TYPE (Concept.City {
 	parent std.Hypernym
 });
-CREATE NOMALIZED TYPE (STD.Email {	value String REGEX '[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,3}'});
-CREATE NOMALIZED TYPE (std.PhoneNumber {	value String REGEX '^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$'});
-CREATE NOMALIZED TYPE (std.Url {	value String REGEX '(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?'});
+CREATE NOMALIZED TYPE (STD.Email {
+	value String REGEX '[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,3}'
+});
+CREATE NOMALIZED TYPE (std.PhoneNumber {
+	value String REGEX '^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$'
+});
+CREATE NOMALIZED TYPE (std.Url {
+	value String REGEX '(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?'
+});
 
 CREATE ENTITY TYPE (Account {
 	id ID,
@@ -52,21 +58,33 @@ CREATE ENTITY TYPE (Person {
 	name String,
 	isBlocked Boolean,
 	gender String,
-	birthday String,	country Concept.Country,	city Concept.City
+	birthday String,
+	country Concept.Country,
+	city Concept.City
 });
 CREATE ENTITY TYPE (Loan {
 	id ID,
-	loanAmount double,	balance double,	usage String,	interestRate double
+	loanAmount double,
+	balance double,
+	usage String,
+	interestRate double
 });
 CREATE ENTITY TYPE (Medium {
 	id ID,
 	createTime Timestamp,
-	type Concept.MediumType,	isBlocked Boolean,	lastLoginTime Long,	riskLevel Concept.RiskLevel
+	type Concept.MediumType,
+	isBlocked Boolean,
+	lastLoginTime Long,
+	riskLevel Concept.RiskLevel
 });
 
 CREATE RELATION TYPE (Account)-[TRANSFER {
 	createTime Timestamp, 
-	amount double,	ordernumber String,	comment String,	payType String,	goodsType String
+	amount double,
+	ordernumber String,
+	comment String,
+	payType String,
+	goodsType String
 }]->(Account);
 CREATE RELATION TYPE (Medium)-[SIGNIN {
 	createTime Timestamp, 
@@ -79,8 +97,10 @@ CREATE RELATION TYPE (Company)-[COMPANYOWMACCOUNT {
 	createTime Timestamp
 }]->(Account);
 CREATE RELATION TYPE (Account)-[WITHDRAW {
-	createTime Timestamp,	amount double
-}]->(Account);CREATE RELATION TYPE (Person)-[PERSONAPPLYLOAN {
+	createTime Timestamp,
+	amount double
+}]->(Account);
+CREATE RELATION TYPE (Person)-[PERSONAPPLYLOAN {
 	createTime Timestamp, 
 	organization String
 }]->(Loan);
@@ -107,7 +127,8 @@ CREATE RELATION TYPE (Company)-[COMPANYINVEST {
 CREATE RELATION TYPE (Person)-[PERSONGUARANTEE {
 	createTime Timestamp, 
 	relation String
-}]->(Person);CREATE RELATION TYPE (Company)-[COMPANYGUARANTEE {
+}]->(Person);
+CREATE RELATION TYPE (Company)-[COMPANYGUARANTEE {
 	createTime Timestamp, 
 	relation String
 }]->(Company);

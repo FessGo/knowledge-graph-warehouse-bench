@@ -27,20 +27,33 @@ CREATE ENTITY TYPE (Person {
 	name String,
 	isBlocked Boolean,
 	gender String,
-	birthday String,	country String,	city String
+	birthday String,
+	country String,
+	city String
 });
 CREATE ENTITY TYPE (Loan {
 	id ID,
-	loanAmount double,	balance double,	usage String,	interestRate double
+	loanAmount double,
+	balance double,
+	usage String,
+	interestRate double
 });
 CREATE ENTITY TYPE (Medium {
 	id ID,
-	type String,	createTime Timestamp,	isBlocked Boolean,	lastLoginTime Long,	riskLevel String
+	type String,
+	createTime Timestamp,
+	isBlocked Boolean,
+	lastLoginTime Long,
+	riskLevel String
 });
 
 CREATE RELATION TYPE (Account)-[TRANSFER {
 	createTime Timestamp, 
-	amount double,	ordernumber String,	comment String,	payType String,	goodsType String
+	amount double,
+	ordernumber String,
+	comment String,
+	payType String,
+	goodsType String
 }]->(Account);
 CREATE RELATION TYPE (Medium)-[SIGNIN {
 	createTime Timestamp, 
