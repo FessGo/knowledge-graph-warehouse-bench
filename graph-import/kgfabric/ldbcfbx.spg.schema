@@ -1,23 +1,23 @@
 CREATE CONCEPT TYPE (Concept.AccountType {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.AccountLevel {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.MediumType {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.BusinessType {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.RiskLevel {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.Country {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE CONCEPT TYPE (Concept.City {
-	parent std.Hypernym
+	isA STD.Hypernym
 });
 CREATE NOMALIZED TYPE (STD.Email {
 	value String REGEX '[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,3}'
@@ -31,7 +31,7 @@ CREATE NOMALIZED TYPE (std.Url {
 
 CREATE ENTITY TYPE (Account {
 	id ID,
-	createTime Timestamp,
+createTime Timestamp,
 	isBlocked Boolean,
 	type Concept.AccountType,
 	nickname String,
