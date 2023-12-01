@@ -1,0 +1,2 @@
+CREATE ENTITY TYPE (User {id ID});
+CREATE RELATION TYPE (User)-[CONNECT {}]->(User);
