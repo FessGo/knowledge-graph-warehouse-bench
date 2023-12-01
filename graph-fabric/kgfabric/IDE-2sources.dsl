@@ -4,6 +4,6 @@ CREATE FUSE OPERATOR fuseAccounts [type=RULE, params=e1,e2,f] {
 CREATE GRAPH VIEW fabricview {
 	(source1:Account1)-[transfer1]->(source1:Account1)
 	(source2:Account2)-[transfer2]->(source2:Account2)
-} WITH OPERATOR {
+} WITH OPERATOR [ide=TRUE] {
 	fuseAccounts(source1, source2, FusedAccount)
 }
