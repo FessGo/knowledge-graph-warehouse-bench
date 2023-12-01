@@ -6,6 +6,6 @@ CREATE GRAPH VIEW fabricview {
 	(source2:Account2)-[transfer2]->(source2:Account2)
 	(source3:Account3)-[transfer3]->(source3:Account3)
 	(source4:Account4)-[transfer4]->(source4:Account4)
-} WITH OPERATOR {
+} WITH OPERATOR [ide=TRUE] {
 	fuseAccounts(source1, source2, source3, source4, FusedAccount)
 }
