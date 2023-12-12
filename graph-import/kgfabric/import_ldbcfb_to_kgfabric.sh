@@ -6,11 +6,11 @@ SCHEMA="ldbcfb.lpg.schema"
 NAMESPACE="ldbc-fb"
 java -jar ${KGFABRIC_BUILDER_PATH} import
 --schema="${SCHEMA}" \
---nodes=Account="$DPATH/account.csv" \
---nodes=Person="$DPATH/person.csv" \
---nodes=Medium="$DPATH/medium.csv" \
---nodes=Company="$DPATH/company.csv" \
---nodes=Loan="$DPATH/loan.csv" \
+--entities=Account="$DPATH/account.csv" \
+--entities=Person="$DPATH/person.csv" \
+--entities=Medium="$DPATH/medium.csv" \
+--entities=Company="$DPATH/company.csv" \
+--entities=Loan="$DPATH/loan.csv" \
 --relationships=TRANSFER="$DPATH/transfer.csv,$DPATH/loantransfer.csv" \
 --relationships=COMPANYAPPLYLOAD="$DPATH/companyApplyLoan.csv" \
 --relationships=COMPANYGUARANTEE="$DPATH/companyGuarantee.csv" \
