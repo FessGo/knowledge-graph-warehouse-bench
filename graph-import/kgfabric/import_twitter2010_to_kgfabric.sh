@@ -6,6 +6,6 @@ SCHEMA="twitter2010.schema"
 NAMESPACE="twitter2010"
 java -jar ${KGFABRIC_BUILDER_PATH} import
 --schema="${SCHEMA}" \
---nodes=User="$DPATH/node.csv" \
+--entities=User="$DPATH/node.csv" \
 --relationships=connect="$DPATH/twitter-2010.csv" \
 "${NAMESPACE}"
