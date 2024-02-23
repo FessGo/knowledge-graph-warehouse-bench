@@ -1,0 +1,3 @@
+[submodule "dataset/ldbc_finbench_datagen_spg_extension"]
+	path = dataset/ldbc_finbench_datagen_spg_extension
+	url = https://github.com/jo3yzhu/ldbc_finbench_datagen_spg_extension.git
